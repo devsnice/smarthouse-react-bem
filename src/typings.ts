@@ -1,9 +1,3 @@
-declare global {
-  interface Window {
-    Hls: any;
-  }
-}
-
 export interface IWidgetPlayerData {
   albumcover: string;
   artist: string;
