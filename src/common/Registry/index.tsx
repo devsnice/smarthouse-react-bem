@@ -3,7 +3,7 @@ import * as React from "react";
 import DeviceDetector from "device-detector-js";
 import { Registry } from "@bem-react/di";
 
-import mobileRegistry from "./mobile";
+import touchRegistry from "./touch";
 import desktopRegistry from "./desktop";
 
 export const APP_REGISTRY_NAME = "platform";
@@ -20,7 +20,7 @@ export const initRegistry = (): Registry => {
   if (device.type === "desktop") {
     desktopRegistry(appRegistry);
   } else {
-    mobileRegistry(appRegistry);
+    touchRegistry(appRegistry);
   }
 
   return appRegistry;

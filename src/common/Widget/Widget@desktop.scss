@@ -1,0 +1,207 @@
+@import "../../styles/vars";
+@import "../../styles/utils";
+
+.Widget {
+  background: $colorGreyLight;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  position: relative;
+
+  &-Control {
+    position: absolute;
+    display: none;
+    transition: 0.2s ease;
+
+    &Icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover {
+      opacity: 0.75;
+    }
+
+    &_close {
+      right: 25px;
+      top: 20px;
+    }
+
+    &_link {
+      right: 28px;
+      bottom: 25px;
+    }
+  }
+
+  &-Header {
+    color: #333333;
+
+    &About {
+      display: flex;
+      align-items: center;
+      margin-bottom: 23px;
+
+      &Title {
+        font-family: $fontBold;
+        font-size: rem(24);
+        word-break: break-all;
+        -webkit-box-orient: vertical;
+        display: -webkit-inline-box;
+        -webkit-line-clamp: 2;
+      }
+
+      &Icon {
+        margin-right: 18px;
+        width: 55px;
+        height: 55px;
+      }
+    }
+
+    &Data {
+      display: flex;
+      justify-content: space-between;
+      color: $colorBlack;
+    }
+
+    &Type {
+      font-size: rem(18);
+      margin-bottom: 20px;
+    }
+
+    &Date {
+      font-size: rem(18);
+    }
+  }
+
+  &-Content {
+    margin-top: 15px;
+    display: grid;
+
+    // it isn't perfect
+
+    & > * {
+      &:first-child {
+        align-self: start;
+      }
+
+      &:last-child {
+        align-self: end;
+      }
+    }
+
+    &Text {
+      font-size: rem(20);
+      line-height: rem(23);
+      max-width: 430px;
+
+      &_width {
+        &_l {
+          max-width: 640px;
+        }
+
+        font-size: rem(24);
+        line-height: rem(28);
+      }
+    }
+
+    &-Image {
+      width: 100%;
+      margin-top: 32px;
+
+      &_type-stats {
+        border-radius: 0 0 20px 20px;
+        margin-top: 52px;
+      }
+
+      &_type-cam {
+        border-radius: 20px;
+      }
+    }
+
+    &-Sensors {
+      display: flex;
+      list-style: none;
+    }
+
+    &-Buttons {
+      display: flex;
+      margin-top: 10px;
+    }
+  }
+
+  &-Sensor {
+    margin-right: 55px;
+    margin-top: 30px;
+    font-size: rem(18);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &__value {
+      margin-left: 5px;
+      font-family: $fontBold;
+    }
+  }
+
+  &_size {
+    &_l {
+      grid-column: span 4;
+      grid-row: span 3;
+    }
+
+    &_m {
+      grid-column: span 3;
+      grid-row: span 2;
+    }
+
+    &_s {
+      grid-column: span 2;
+
+      .widget-header-data {
+        display: block;
+      }
+    }
+  }
+
+  &_type {
+    &_critical {
+      .Widget-Header {
+        background: $colorCritical;
+        margin: -20px -20px 0 -20px;
+        padding: 20px 20px 40px 20px;
+        border-radius: 20px 20px 0 0;
+        color: #fff;
+
+        &Data {
+          color: #fff;
+        }
+      }
+
+      .Widget-Content {
+        border-radius: 20px 20px 0 0;
+        margin: -20px -20px 0 -20px;
+        padding: 22px 20px 0 20px;
+        background: $colorGreyLight;
+      }
+
+      &:hover {
+        .Widget-Content {
+          background: #f3f3f3;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    background: #f3f3f3;
+    box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.5);
+    transition: 0.2s ease-in;
+
+    .Widget-Control {
+      display: block;
+    }
+  }
+}

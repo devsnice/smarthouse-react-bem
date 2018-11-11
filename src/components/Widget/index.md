@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import * as Types from "../../types";
+import * as Types from "../../typings";
 
 // Icons for widgets
 import acIcon from "./icons/ac.svg";
@@ -37,7 +37,7 @@ const WIDGET_ICON: {
   cam: camIcon,
   stats: statsIcon,
   key: keyIcon,
-  "robot-cleaner": robotCleanerIcon,
+  robotCleaner: robotCleanerIcon,
   router: routerIcon,
   thermal: thermalIcon,
   ac: acIcon,

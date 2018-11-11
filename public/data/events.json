@@ -65,7 +65,7 @@
       "source": "Пылесос",
       "time": "18:45, Сегодня",
       "description": null,
-      "icon": "robot-cleaner",
+      "icon": "robotCleaner",
       "size": "s"
     },
     {

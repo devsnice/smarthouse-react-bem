@@ -1,8 +1,11 @@
 import * as React from "react";
 import { cn } from "@bem-react/classname";
+import { RegistryConsumer } from "@bem-react/di";
+
+import { cnWidget, IWidgetPropTypes } from "./../Widget/Widget";
+import { APP_REGISTRY_NAME } from "./../Registry";
 
 import * as Types from "../../typings";
-import Widget from "../../components/Widget";
 
 import "./style.scss";
 
@@ -34,15 +37,24 @@ class Dashboard extends React.Component {
 
   public render() {
     return (
-      <div className={cnDashboard()}>
-        <h1 className={cnDashboard("Title")}>Лента событий</h1>
+      <RegistryConsumer>
+        {registries => {
+          const appRegister = registries[APP_REGISTRY_NAME];
+          const Widget = appRegister.get<IWidgetPropTypes>(cnWidget());
 
-        <div className={cnDashboard("List")}>
-          {this.state.events.map(event => (
-            <Widget event={event} />
-          ))}
-        </div>
-      </div>
+          return (
+            <div className={cnDashboard()}>
+              <h1 className={cnDashboard("Title")}>Лента событий</h1>
+
+              <div className={cnDashboard("List")}>
+                {this.state.events.map(event => (
+                  <Widget key={event.id} event={event} />
+                ))}
+              </div>
+            </div>
+          );
+        }}
+      </RegistryConsumer>
     );
   }
 }

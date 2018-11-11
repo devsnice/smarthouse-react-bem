@@ -1,0 +1,196 @@
+@import "../../styles/vars";
+@import "../../styles/utils";
+
+.Widget {
+  background: $colorGreyLight;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  position: relative;
+  margin-bottom: 14px;
+
+  &-Control {
+    position: absolute;
+    transition: 0.2s ease;
+
+    &Icon {
+      width: 12px;
+      height: 12px;
+    }
+
+    &_close {
+      right: 25px;
+      top: 20px;
+    }
+
+    &_link {
+      right: 28px;
+      bottom: 25px;
+    }
+  }
+
+  &-Header {
+    color: #333333;
+
+    &About {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+
+      &Title {
+        font-family: $fontBold;
+        font-size: rem(14);
+        word-break: break-all;
+        -webkit-box-orient: vertical;
+        display: -webkit-inline-box;
+        -webkit-line-clamp: 2;
+      }
+
+      &Icon {
+        margin-right: 18px;
+        width: 35px;
+        height: 55px;
+
+        &.icon_stats {
+          width: 45px;
+        }
+      }
+    }
+
+    &Data {
+      display: flex;
+      justify-content: space-between;
+      color: $colorBlack;
+    }
+
+    &Type {
+      margin-bottom: 0;
+      font-size: rem(12);
+    }
+
+    &Date {
+      font-size: rem(12);
+    }
+  }
+
+  &-Content {
+    margin-top: 15px;
+    display: grid;
+
+    // it isn't perfect
+
+    & > * {
+      &:first-child {
+        align-self: start;
+      }
+
+      &:last-child {
+        align-self: end;
+      }
+    }
+
+    &Text {
+      font-size: rem(18);
+      line-height: rem(23);
+      max-width: 430px;
+
+      &_width {
+        &_l {
+          max-width: 640px;
+        }
+
+        font-size: rem(18);
+        font-size: rem(22);
+      }
+    }
+
+    &-Image {
+      width: 100%;
+      margin-top: 32px;
+
+      &_type-stats {
+        border-radius: 0 0 20px 20px;
+        margin-top: 52px;
+      }
+
+      &_type-cam {
+        border-radius: 20px;
+        height: 205px;
+      }
+    }
+
+    &-Sensors {
+      display: flex;
+      list-style: none;
+      justify-content: space-between;
+    }
+
+    &-Buttons {
+      display: flex;
+      margin-top: 10px;
+      justify-content: space-between;
+      margin-top: 24px;
+    }
+  }
+
+  &-Sensor {
+    margin-right: 55px;
+    margin-top: 30px;
+    font-size: rem(14);
+    margin-right: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &__value {
+      margin-left: 5px;
+      font-family: $fontBold;
+    }
+  }
+
+  &_size {
+    &_l {
+      grid-column: span 4;
+      grid-row: span 3;
+    }
+
+    &_m {
+      grid-column: span 3;
+      grid-row: span 2;
+    }
+
+    &_s {
+      grid-column: span 2;
+
+      .widget-header-data {
+        display: flex;
+      }
+    }
+  }
+
+  &_type {
+    &_critical {
+      .Widget-Header {
+        background: $colorCritical;
+        margin: -20px -20px 0 -20px;
+        padding: 20px 20px 40px 20px;
+        border-radius: 20px 20px 0 0;
+        color: #fff;
+
+        &Data {
+          color: #fff;
+        }
+      }
+
+      .Widget-Content {
+        border-radius: 20px 20px 0 0;
+        margin: -20px -20px 0 -20px;
+        padding: 22px 20px 0 20px;
+        background: $colorGreyLight;
+      }
+    }
+  }
+}
