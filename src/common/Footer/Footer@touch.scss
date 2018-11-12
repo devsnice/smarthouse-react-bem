@@ -1,0 +1,26 @@
+@import "../../styles/utils";
+
+.Footer {
+  display: block;
+  margin-top: 30px;
+  padding: 0 0 20px 27px;
+  background: #fff;
+
+  &-Links {
+    &Item {
+      font-size: rem(12);
+      color: #858585;
+      text-align: left;
+      padding-right: 15px;
+      display: block;
+      line-height: 20px;
+    }
+  }
+
+  &-Copyright {
+    font-size: rem(12);
+    color: #858585;
+    text-align: left;
+    margin-top: 15px;
+  }
+}

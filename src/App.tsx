@@ -2,7 +2,7 @@ import * as React from "react";
 import { RegistryConsumer, withRegistry } from "@bem-react/di";
 
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+import { cnFooter } from "./common/Footer/Footer";
 
 import Dashboard from "./common/Dashboard";
 
@@ -21,13 +21,11 @@ class App extends React.Component {
       <RegistryConsumer>
         {registries => {
           const appRegister = registries[APP_REGISTRY_NAME];
-          const CommonComponent = appRegister.get("commonComponent");
+          const Footer = appRegister.get(cnFooter());
 
           return (
             <main className="application">
               <Header />
-
-              <CommonComponent />
 
               <div className="application-content">
                 <Dashboard />

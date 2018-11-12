@@ -1,6 +1,6 @@
 @import "../../styles/utils";
 
-.footer {
+.Footer {
   display: flex;
   justify-content: space-between;
   padding: 0 40px 27px;
@@ -12,8 +12,8 @@
     padding: 0 0 20px 27px;
   }
 
-  &-links {
-    &__item {
+  &-Links {
+    &Item {
       display: inline-block;
       font-size: rem(12);
       color: #858585;
@@ -27,7 +27,7 @@
     }
   }
 
-  &-copyright {
+  &-Copyright {
     font-size: rem(12);
     color: #858585;
     text-align: left;
