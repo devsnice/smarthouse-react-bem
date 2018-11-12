@@ -1,8 +1,8 @@
 import * as React from "react";
 import { RegistryConsumer, withRegistry } from "@bem-react/di";
 
-import Header from "./components/Header";
 import { cnFooter } from "./common/Footer/Footer";
+import { cnHeader } from "./common/Header/Header";
 
 import Dashboard from "./common/Dashboard";
 
@@ -22,6 +22,7 @@ class App extends React.Component {
         {registries => {
           const appRegister = registries[APP_REGISTRY_NAME];
           const Footer = appRegister.get(cnFooter());
+          const Header = appRegister.get(cnHeader());
 
           return (
             <main className="application">

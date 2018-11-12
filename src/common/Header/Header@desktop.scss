@@ -1,0 +1,58 @@
+@import "../../styles/utils";
+
+.Header {
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  height: 92px;
+  width: 100%;
+  z-index: 100;
+
+  &-Content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 0 $paddingSideDesktop;
+  }
+
+  &-Logotype {
+    padding: 32px 0;
+    float: left;
+
+    &Image {
+      width: 127px;
+      height: 27px;
+      display: block;
+    }
+  }
+
+  &-Menu {
+    $menu: &;
+
+    margin-left: 52px;
+    padding: 36px 0;
+
+    &List {
+      $menu-list: &;
+
+      &Item {
+        display: inline-block;
+        margin-right: 28px;
+        color: #333333;
+        font-size: rem(16);
+        line-height: rem(20);
+        opacity: 0.6;
+        font-weight: 700;
+
+        &_active {
+          opacity: 1;
+        }
+
+        &:hover,
+        &:focus {
+          color: #333333;
+        }
+      }
+    }
+  }
+}
