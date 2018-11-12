@@ -21,15 +21,11 @@
     }
 
     &Title {
-      font-size: rem(20);
-
-      @include media("mobile") {
-        font-size: rem(18);
-        display: block;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-      }
+      font-size: rem(18);
+      display: block;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
     }
   }
 

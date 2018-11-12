@@ -1,0 +1,88 @@
+@import "../../styles/vars";
+@import "../../styles/utils";
+
+.Player {
+  margin-top: 23px;
+
+  &-Now {
+    display: grid;
+    grid-template-columns: 68px 1fr;
+
+    &Cover {
+      width: 52px;
+      height: 52px;
+      border-radius: 4px;
+      grid-column: 1 span;
+    }
+
+    &Info {
+      grid-column: 1 span;
+      overflow: hidden;
+    }
+
+    &Title {
+      font-size: rem(20);
+    }
+  }
+
+  &-Progress {
+    display: flex;
+    margin: 10px 0;
+    align-items: center;
+
+    &Track {
+      flex-grow: 1;
+    }
+
+    &Time {
+      margin-left: 16px;
+      font-family: Helvetica;
+      font-size: rem(14);
+      color: rgba(#a1a1a1, 0.84);
+    }
+  }
+
+  &-Volume {
+    width: 100%;
+    display: flex;
+
+    &Track {
+      flex-grow: 1;
+      margin-right: 12px;
+    }
+
+    &Percentage {
+      font-family: Helvetica;
+      font-size: rem(14);
+      color: rgba(#a1a1a1, 0.84);
+    }
+  }
+
+  &-Controls {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-Volume {
+      display: flex;
+      flex-grow: 1;
+      margin-left: 12px;
+    }
+  }
+
+  &-Control {
+    &Icon {
+      width: 55px;
+      height: 55px;
+    }
+
+    &_prev {
+      margin-right: 27px;
+    }
+
+    &_next {
+      transform: rotate(180deg);
+    }
+  }
+}

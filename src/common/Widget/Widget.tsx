@@ -126,8 +126,6 @@ export class Widget extends React.Component<IWidgetPropTypes> {
         </header>
 
         <main className={cnWidget("Content")}>
-          {WidgetDataTemplate && <WidgetDataTemplate event={event} />}
-
           {event.description && (
             <p
               className={cnWidget("ContentText", {
@@ -137,6 +135,8 @@ export class Widget extends React.Component<IWidgetPropTypes> {
               {event.description}
             </p>
           )}
+
+          {WidgetDataTemplate && <WidgetDataTemplate event={event} />}
         </main>
 
         <div

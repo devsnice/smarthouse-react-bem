@@ -5,9 +5,7 @@ import Icon from "../Icon";
 
 import prevIcon from "./icons/prev.svg";
 
-import "./Player.scss";
-
-interface IPlayerProps {
+export interface IPlayerProps {
   current: {
     albumCover: string;
     title: string;
@@ -18,7 +16,7 @@ interface IPlayerProps {
 
 export const cnPlayer = cn("Player");
 
-const Player: React.SFC<IPlayerProps> = ({ current }) => {
+export const Player: React.SFC<IPlayerProps> = ({ current }) => {
   return (
     <div className={cnPlayer()}>
       <div className={cnPlayer("Now")}>
@@ -60,5 +58,3 @@ const Player: React.SFC<IPlayerProps> = ({ current }) => {
     </div>
   );
 };
-
-export default Player;
