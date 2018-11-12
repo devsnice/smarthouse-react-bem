@@ -1,0 +1,26 @@
+@import "../../styles/vars";
+@import "../../styles/utils";
+
+.Button {
+  display: block;
+  width: 100px;
+  height: 54px;
+  line-height: 54px;
+  border-radius: 8px;
+  font-size: rem(20);
+  color: #000000;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  font-family: $fontBold;
+
+  &_theme {
+    &_yellow {
+      background: $colorYellow;
+    }
+
+    &_grey {
+      background: $colorGreyDark;
+    }
+  }
+}

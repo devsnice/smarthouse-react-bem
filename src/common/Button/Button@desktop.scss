@@ -1,7 +1,7 @@
 @import "../../styles/vars";
 @import "../../styles/utils";
 
-.button {
+.Button {
   display: block;
   width: 132px;
   height: 54px;
@@ -14,22 +14,13 @@
   border: none;
   font-family: $fontBold;
 
-  @include media("mobile") {
-    font-size: rem(20);
-    width: 100px;
-  }
-
-  &_type {
-    &-yellow {
+  &_theme {
+    &_yellow {
       background: $colorYellow;
     }
 
-    &-grey {
+    &_grey {
       background: $colorGreyDark;
     }
-  }
-
-  &_m-r-18 {
-    margin-right: 18px;
   }
 }

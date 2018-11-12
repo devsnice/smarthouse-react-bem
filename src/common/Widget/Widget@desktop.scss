@@ -125,9 +125,14 @@
       list-style: none;
     }
 
-    &-Buttons {
+    &Buttons {
       display: flex;
       margin-top: 10px;
+      justify-content: start;
+    }
+
+    &ButtonYes {
+      margin-right: 18px;
     }
   }
 
@@ -160,7 +165,7 @@
     &_s {
       grid-column: span 2;
 
-      .widget-header-data {
+      .Widget-HeaderData {
         display: block;
       }
     }

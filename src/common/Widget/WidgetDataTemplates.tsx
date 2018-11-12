@@ -9,6 +9,7 @@ import Camera from "../Camera/Camera";
 
 import { cnWidget } from "../Widget/Widget";
 import { cnPlayer, IPlayerProps } from "../Player/Player";
+import { cnButton, IButtonProps } from "../Button/Button";
 
 import albumCover from "./images/album-cover.png";
 import richDataImage from "./images/richdata.png";
@@ -28,10 +29,21 @@ export const StatsWidgetData: React.SFC<ITemplateProps> = ({ event }) => (
 );
 
 export const QuestionsWidgetData: React.SFC<ITemplateProps> = ({ event }) => (
-  <div className={cnWidget("ContentButtons")}>
-    <button className="button button_type-yellow button_m-r-18" />
-    <button className="button button_type-grey" />
-  </div>
+  <RegistryConsumer>
+    {registries => {
+      const appRegister = registries[APP_REGISTRY_NAME];
+      const Button = appRegister.get<IButtonProps>(cnButton());
+
+      return (
+        <div className={cnWidget("ContentButtons")}>
+          <Button theme="yellow" className={cnWidget("ContentButtonYes")}>
+            Да
+          </Button>
+          <Button theme="grey">Нет</Button>
+        </div>
+      );
+    }}
+  </RegistryConsumer>
 );
 
 export const ThemalWidgetData: React.SFC<ITemplateProps> = ({ event }) => {
