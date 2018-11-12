@@ -131,7 +131,7 @@
     }
   }
 
-  &-Sensor {
+  &Sensor {
     margin-right: 55px;
     margin-top: 30px;
     font-size: rem(18);
@@ -140,7 +140,7 @@
       margin-right: 0;
     }
 
-    &__value {
+    &-Value {
       margin-left: 5px;
       font-family: $fontBold;
     }

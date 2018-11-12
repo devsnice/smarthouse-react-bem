@@ -1,5 +1,6 @@
 import * as React from "react";
 import { RegistryConsumer } from "@bem-react/di";
+import { cn } from "@bem-react/classname";
 
 import * as Types from "../../typings";
 
@@ -34,20 +35,22 @@ export const QuestionsWidgetData: React.SFC<ITemplateProps> = ({ event }) => (
   </div>
 );
 
-// TODO: map data event on widget
-// use cn
 export const ThemalWidgetData: React.SFC<ITemplateProps> = ({ event }) => {
-  const temp = "";
+  const data = event.data as Types.IWidgetThemalData;
+
+  const cnWidgetSensor = cn("WidgetSensor");
+  const cnWidgetContent = cn("Widget-Content");
 
   return (
-    <ul className="widget-content__sensors">
-      <li className="widget-sensor widget-sensor_type-temp">
-        <span className="widget-sensor__name">Температура:</span>
-        <span className="widget-sensor__value" />
+    <ul className={cnWidgetContent("Sensors")}>
+      <li className={cnWidgetSensor({ type: "temp" })}>
+        <span className={cnWidgetSensor("Name")}>Температура:</span>
+        <span className={cnWidgetSensor("Value")}>{data.temperature}C</span>
       </li>
-      <li className="widget-sensor widget-sensor_type-humidity">
-        <span className="widget-sensor__name">Влажность:</span>
-        <span className="widget-sensor__value" />
+
+      <li className={cnWidgetSensor({ type: "humidity" })}>
+        <span className={cnWidgetSensor("Name")}>Влажность:</span>
+        <span className={cnWidgetSensor("Value")}>{data.humidity}%</span>
       </li>
     </ul>
   );
