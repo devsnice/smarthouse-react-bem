@@ -7,29 +7,28 @@ import * as Types from "../../typings";
 import { APP_REGISTRY_NAME } from "../Registry/index";
 import Camera from "../Camera/Camera";
 
-import { cnWidget } from "./Widget";
+import { cnWidget } from "../Widget/Widget";
 import { cnPlayer, IPlayerProps } from "../Player/Player";
 
 import albumCover from "./images/album-cover.png";
+import richDataImage from "./images/richdata.png";
 
 export interface ITemplateProps {
   event: Types.Event;
 }
 
-// TODO: WidgetContentImage - to block WidgetContentImage
-// use cn
 export const StatsWidgetData: React.SFC<ITemplateProps> = ({ event }) => (
   <img
-    className="widget-content__image widget-content__image_type-stats"
-    src="./images/richdata.png"
+    className={cnWidget("ContentImage", {
+      type: "stats"
+    })}
+    src={richDataImage}
     alt="statistic"
   />
 );
 
-// TODO: use button block here
-// use cn
 export const QuestionsWidgetData: React.SFC<ITemplateProps> = ({ event }) => (
-  <div className="widget-content__buttons">
+  <div className={cnWidget("ContentButtons")}>
     <button className="button button_type-yellow button_m-r-18" />
     <button className="button button_type-grey" />
   </div>
@@ -39,10 +38,9 @@ export const ThemalWidgetData: React.SFC<ITemplateProps> = ({ event }) => {
   const data = event.data as Types.IWidgetThemalData;
 
   const cnWidgetSensor = cn("WidgetSensor");
-  const cnWidgetContent = cn("Widget-Content");
 
   return (
-    <ul className={cnWidgetContent("Sensors")}>
+    <ul className={cnWidget("ContentSensors")}>
       <li className={cnWidgetSensor({ type: "temp" })}>
         <span className={cnWidgetSensor("Name")}>Температура:</span>
         <span className={cnWidgetSensor("Value")}>{data.temperature}C</span>

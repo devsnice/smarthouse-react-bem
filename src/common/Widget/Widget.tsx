@@ -12,7 +12,7 @@ import {
   PlayerWidgetData,
   CameraWidgetData,
   ITemplateProps
-} from "./WidgetTemplates";
+} from "./WidgetDataTemplates";
 
 // Icons for widgets
 import acIcon from "./icons/ac.svg";
