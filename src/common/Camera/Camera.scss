@@ -1,0 +1,22 @@
+@import "../../styles/vars";
+@import "../../styles/utils";
+
+.CameraInfo {
+  display: none;
+  justify-content: space-between;
+  margin-top: 16px;
+
+  // it's touch block, i don't separate it here
+  @include media("mobile") {
+    display: flex;
+  }
+
+  &-Data {
+    display: flex;
+    font-size: rem(12);
+
+    &Value {
+      padding-left: 3px;
+    }
+  }
+}
