@@ -32,6 +32,7 @@ export class Header extends React.Component {
                   className={cnHeader("MenuListItem", {
                     active: link.active
                   })}
+                  key={`${link.to}-${link.title}`}
                 >
                   <a href={link.to}>{link.label}</a>
                 </li>

@@ -32,7 +32,10 @@ export const Footer: React.SFC = () => {
     <footer className={cnFooter()}>
       <ul className={cnFooter("Links")}>
         {footerLinks.map(link => (
-          <li className={cnFooter("LinksItem")}>
+          <li
+            key={`${link.to}-${link.label}`}
+            className={cnFooter("LinksItem")}
+          >
             <a href={link.to}>{link.label}</a>
           </li>
         ))}
